@@ -79,6 +79,17 @@ document.addEventListener("DOMContentLoaded", () => {
             //Now show the front of the card, when i hover over the back of it
             backOfPokeCard.addEventListener("mouseover", () => {
                 pokeCardDiv.replaceChild(frontOfPokeCard, backOfPokeCard)
+
+                //When the sidepanel is closed, and you drag an image it will open
+                let isPanelOpen = false;
+    
+                pokeImg.addEventListener("dragstart", () => { //start dragging the img from pokeCard
+                    if (!isPanelOpen) {
+                    document.querySelector(".wrapper").classList.add("side-panel-open");
+                    isPanelOpen = true;
+                    pokeImg.classList.add("dragging"); //Add dragging to pokeImg class
+                } 
+          });
             })
         }
         kantoPokemon.append(pokeCardDiv)
