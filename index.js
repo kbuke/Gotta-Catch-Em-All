@@ -13,4 +13,17 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
     .then(resp => resp.json())
     .then(data => data.results.forEach(pokemon => createCard(pokemon)))
+
+     //Create the pokemon cards
+     function createCard(pokemon){
+        //Create the card holders
+        let pokeCardDiv = document.createElement("div")
+        pokeCardDiv.className = "pokemonCards"
+    
+        //Get names of each pokemon using "pokemon" values
+        let pokeName = document.createElement("h2")
+        pokeName.className = "pokemonName" //make the classNames of pokemonName their actual names
+        pokeName.innerText = `${pokemon.name}`.toUpperCase() //convert all names to uppercase
+        pokeCardDiv.classList.add(pokeName.innerText) //also add the names of each pokemon to their respective card
+        //console.log(pokeName.innerText)
 })
