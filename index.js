@@ -26,4 +26,16 @@ document.addEventListener("DOMContentLoaded", () => {
         pokeName.innerText = `${pokemon.name}`.toUpperCase() //convert all names to uppercase
         pokeCardDiv.classList.add(pokeName.innerText) //also add the names of each pokemon to their respective card
         //console.log(pokeName.innerText)
+
+        //Retreive additional Pokemon Info from the nested url in the above
+        let pokeUrl = pokemon.url
+        fetch(pokeUrl)
+        .then(resp => resp.json())
+        .then(data => pokeStats(data))
+    
+        const pokeStats = (pokeInfo) => { //pokeInfo now carries all values from "data" (line 34)
+            //pokeInfo includes additional info. I want their images, types and id number, all are here for each 151.
+            console.log(pokeInfo)
+        }
+    }
 })
