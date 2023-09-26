@@ -151,4 +151,24 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         kantoPokemon.append(pokeCardDiv) //Append all cards to this section
     }
+        //Now control the drop down bar
+  typeSelector.addEventListener("change", () => {
+    let selectedType = typeSelector.value
+    
+    let pokemonCards = document.querySelectorAll(".pokemonCards")
+  
+    //Show Pokemon whos pokeTypes match the dropselect option 
+    pokemonCards.forEach((card) => {
+      //Ensures if "all pokemon" is selected, then all pokemon will show
+      if(selectedType == "all pokemon"){
+        card.style.display = "block"
+        //If the pokeTypes mention in classlist matches the value of dropdown it will return those cards
+      } else if (card.classList.contains(selectedType)) {
+        card.style.display = "block";
+        //Otherwise nothing
+      } else {
+        card.style.display = "none";
+      }
+    })
+  })
 })
