@@ -116,3 +116,49 @@ input{
 .sp-icon-close {
     display: none !important; 
 }
+/*end of index.html elements*/
+
+.pokemonCards{
+    margin-top: 100px;
+    margin: 2rem; 
+    align-content: center;
+    align-items: center;
+} 
+
+.backEnd{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+    padding: 5px;
+    text-align: center;
+    width: 15rem;
+    height: 25rem;
+    margin: 1rem 2rem;
+}
+
+.frontCard{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+    text-align: center;
+    border: grey solid 1px;
+    padding: 1rem;
+    width: 15rem;
+    height: 25rem;
+    display: inline-grid;
+    margin: 1rem 2rem;
+    box-shadow: 3px 4px #e04b52;
+    cursor: move;
+    background: url(https://cdn.bhdw.net/im/pikachu-pattern-wallpaper-56185_w635.webp) center no-repeat;
+  }
+
+  .pokemonImages{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0%;
+    background-color: black;
+    width: 14rem;
+    height: 15rem;
+}
