@@ -145,6 +145,9 @@ document.addEventListener("DOMContentLoaded", () => {
             };
             Array.from(containers).forEach(handleDragOver) //containers is a HTML collection of the three containers, this line turns them into an array, and for each one of them it is susseptible to the handleDragOver function
             })
+            frontOfPokeCard.addEventListener("mouseout", () => {
+                pokeCardDiv.replaceChild(backOfPokeCard, frontOfPokeCard)
+            })
         }
         kantoPokemon.append(pokeCardDiv) //Append all cards to this section
     }
