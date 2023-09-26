@@ -43,8 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
             //The class name of each pokemon will be their specific classes
             //Note that some Pokemon have more than 1 class. In this case the for loop will ensure all classes are logged in the class
             for(let i = 0; i < specificType.length; i++){
-            pokeCardDiv.classList.add(specificType[i])
+                pokeCardDiv.classList.add(specificType[i])
             }
+            //Get the id of each specific Pokemon, base this on the Kanto Regions id number
+            let kantoId = pokeInfo.id
+            pokeCardDiv.id = kantoId
         }
     }
 })
