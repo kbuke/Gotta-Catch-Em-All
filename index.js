@@ -36,6 +36,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const pokeStats = (pokeInfo) => { //pokeInfo now carries all values from "data" (line 34)
             //pokeInfo includes additional info. I want their images, types and id number, all are here for each 151.
             console.log(pokeInfo)
+
+            //Get the Pokemon Types, and add them to the class of each pokemon card
+            let types = pokeInfo.types
+            let specificType = types.map(pokeType => pokeType.type.name)
+            //The class name of each pokemon will be their specific classes
+            //Note that some Pokemon have more than 1 class. In this case the for loop will ensure all classes are logged in the class
+            for(let i = 0; i < specificType.length; i++){
+            pokeCardDiv.classList.add(specificType[i])
+            }
         }
     }
 })
