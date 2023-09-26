@@ -63,5 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
             //Append backOfPokeCard to the pokeCardDiv
             pokeCardDiv.appendChild(backOfPokeCard)
         }
+        kantoPokemon.append(pokeCardDiv)
     }
 })
