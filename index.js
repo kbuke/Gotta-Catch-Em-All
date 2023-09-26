@@ -75,6 +75,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             //Append name, images and id to the front of card
             frontOfPokeCard.append(pokeName, pokeImg, pokeId)
+
+            //Now show the front of the card, when i hover over the back of it
+            backOfPokeCard.addEventListener("mouseover", () => {
+                pokeCardDiv.replaceChild(frontOfPokeCard, backOfPokeCard)
+            })
         }
         kantoPokemon.append(pokeCardDiv)
     }
