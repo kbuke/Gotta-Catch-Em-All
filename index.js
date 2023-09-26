@@ -67,6 +67,11 @@ document.addEventListener("DOMContentLoaded", () => {
             backOfPokeCard.classList.add(pokeName.innerText)
             //Append backOfPokeCard to the pokeCardDiv
             pokeCardDiv.appendChild(backOfPokeCard)
+
+            
+            //Create the front of the pokemon card, it will show the Pokemons name, img, and id number
+            let frontOfPokeCard = document.createElement("div")
+            frontOfPokeCard.className = "frontCard"
         }
         kantoPokemon.append(pokeCardDiv)
     }
