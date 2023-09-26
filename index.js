@@ -48,6 +48,12 @@ document.addEventListener("DOMContentLoaded", () => {
             //Get the id of each specific Pokemon, base this on the Kanto Regions id number
             let kantoId = pokeInfo.id
             pokeCardDiv.id = kantoId
+
+            //Get the image of each of the 151 Pokemon
+            let pokeImg = document.createElement("img")
+            pokeImg.className = "pokemonImages"
+            pokeImg.id = `${kantoId} image`
+            pokeImg.src = `${pokeInfo.sprites["front_default"]}`
         }
     }
 })
