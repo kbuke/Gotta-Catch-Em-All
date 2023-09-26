@@ -12,7 +12,21 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => data.results.forEach(pokemon => createCard(pokemon)))
 
     const createCard = (pokemon) => {
-        console.log(pokemon)
+       //Create Pokemon Card Holder
+       let pokeCardDiv = document.createElement("div")
+       pokeCardDiv.className = "pokemonCards"
+
+        //Capture all Pokemon Names
+       let pokeName = document.createElement("h2")
+       pokeName.innerText = `${pokemon.name}`.toUpperCase() 
+    
+       fetch(`${pokemon.url}`)
+       .then(resp => resp.json())
+       .then(data => pokeStats(data))
+
+       const pokeStats = (pokeInfo) => {
+        console.log(pokeInfo)
+       }
     }
 })
 
