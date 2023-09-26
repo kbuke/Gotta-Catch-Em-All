@@ -55,6 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
             pokeImg.id = `${kantoId} image`
             pokeImg.src = `${pokeInfo.sprites["front_default"]}`
 
+            //We already have img, name and id, but I want to make the id number a bit more specific
+            let pokeId = document.createElement("b")
+            pokeId.className = "pokemonID"
+            pokeId.innerText = `KANTO REGION ID: ${kantoId}`
+
             //Create the back of the Pokemon Card
             let backOfPokeCard = document.createElement("img")
             backOfPokeCard.className = "backEnd"
