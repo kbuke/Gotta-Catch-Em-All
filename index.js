@@ -12,21 +12,96 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => data.results.forEach(pokemon => createCard(pokemon)))
 
     const createCard = (pokemon) => {
-       //Create Pokemon Card Holder
-       let pokeCardDiv = document.createElement("div")
-       pokeCardDiv.className = "pokemonCards"
+        //Create Pokemon Card Holder
+        let pokeCardDiv = document.createElement("div")
+        pokeCardDiv.className = "pokemonCards"
 
         //Capture all Pokemon Names
-       let pokeName = document.createElement("h2")
-       pokeName.innerText = `${pokemon.name}`.toUpperCase() 
+        let pokeName = document.createElement("h2")
+        pokeName.innerText = `${pokemon.name}`.toUpperCase() 
+        //pokeCardDiv.classList.add(pokeName.innerText)
+        pokeCardDiv.id = pokeName.innerText
     
-       fetch(`${pokemon.url}`)
-       .then(resp => resp.json())
-       .then(data => pokeStats(data))
+        fetch(`${pokemon.url}`)
+        .then(resp => resp.json())
+        .then(data => pokeStats(data))
 
-       const pokeStats = (pokeInfo) => {
-        console.log(pokeInfo)
-       }
+        const pokeStats = (pokeInfo) => {
+
+            //Capture the Pokemon Types
+            let types = pokeInfo.types
+            let specificType = types.map(pokeType => pokeType.type.name)
+            //Add the types to the class name of pokeCardDiv
+            specificType.forEach(element => pokeCardDiv.classList.add(element))
+
+            //Create the back of Poke Card
+            let backOfPokeCard = document.createElement("img")
+            backOfPokeCard.className = "backEnd"
+            backOfPokeCard.src = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4f7705ec-8c49-4eed-a56e-c21f3985254c/dah43cy-a8e121cb-934a-40f6-97c7-fa2d77130dd5.png/v1/fit/w_828,h_1148/pokemon_card_backside_in_high_resolution_by_atomicmonkeytcg_dah43cy-414w-2x.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTQyMCIsInBhdGgiOiJcL2ZcLzRmNzcwNWVjLThjNDktNGVlZC1hNTZlLWMyMWYzOTg1MjU0Y1wvZGFoNDNjeS1hOGUxMjFjYi05MzRhLTQwZjYtOTdjNy1mYTJkNzcxMzBkZDUucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.9GzaYS7sd8RPY5FlHca09J9ZQZ9D9zI69Ru-BsbkLDA"
+            //backOfPokeCard.classList.add(pokeName.innerText)
+
+            //Append backOfPokeCard to the pokeCardDiv
+            pokeCardDiv.appendChild(backOfPokeCard)
+
+            //Create front of Poke Card
+            let frontOfPokeCard = document.createElement("div")
+            frontOfPokeCard.className = "frontCard"
+
+            //Capture the Pokemon Images
+            let pokeImg = document.createElement("img")
+            pokeImg.src = `${pokeInfo.sprites["front_default"]}`
+            pokeImg.alt = `${pokeName.innerText}'s Image`
+            pokeImg.className = "pokemonImages"
+   
+            //Capture the Pokemon ID's
+            let kantoId = pokeInfo.id
+            //pokeCardDiv.id = kantoId
+            let pokeId = document.createElement("b")
+            pokeId.className = "pokemonID"
+            pokeId.innerText = `KANTO REGION ID: ${kantoId}`   
+
+            //Append all info to the front of the card
+            frontOfPokeCard.append(pokeName, pokeImg, pokeId)
+
+            //Turn Card Back to Front
+            backOfPokeCard.addEventListener("mouseover", () => {
+                pokeCardDiv.replaceChild(frontOfPokeCard, backOfPokeCard)
+            })
+
+            //Turn card Front to Back
+            frontOfPokeCard.addEventListener("mouseout", () => {
+                pokeCardDiv.replaceChild(backOfPokeCard, frontOfPokeCard)
+            })
+        }
+        kantoPokemon.append(pokeCardDiv)
+
+        let pokemonCards = document.querySelectorAll(".pokemonCards")
+
+        pokemonCards.forEach(card => {
+            //Filter using the drop down menu
+            typeSelector.addEventListener("change", (e) => {
+                e.preventDefault()
+                let selectedType = e.target.value.toLowerCase()
+                if(selectedType == "all pokemon"){
+                    card.style.display = "block"
+                } else if(card.classList.contains(selectedType)){
+                    card.style.display = "block"
+                } else {
+                    card.style.display = "none"
+                }
+            })
+
+            //Filter using the search bar
+            searchInput.addEventListener("input", (e) => {
+                //console.log(e.target.value)
+                let typeInput = e.target.value.toUpperCase()
+                if(card.id.includes(typeInput)){
+                    card.style.display = "block"
+                } else {
+                    card.style.display = "none"
+                }
+            })
+        })
     }
 })
 

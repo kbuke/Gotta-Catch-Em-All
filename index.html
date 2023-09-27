@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon TCG</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
     <script type="text/javascript" defer src="index.js"></script>
     <link rel="stylesheet" href="index.css" /> 
 </head>
 <body>
     <div class="wrapper side-panel-open">
-        <!--Info on the LHS of web page-->
         <div class="main">
             <div id="PokeDex">
                 <img src="https://fontmeme.com/permalink/230917/e17fd01b736d954247a0c2255c766ad9.png"
@@ -22,16 +20,12 @@
             </div>
 
             <div id="teamRocket">
-                <b>Team Rocket have attacked the Kanto Region. It's up to you and your team of three Pokemon to take them on and save the day.</b>
-                <b>Assemble your team by:
-                    <ul>
-                        <li>Placing your cursor over the Pokemon Card to reveal which Pokemon lies underneath.</li>
-                        <li>When you see a Pokemon you like drag its image into one of the containers on the right hand side.</li>
-                        <li>There are only three spots, so if you want to change your team, drag the image of the Pokemon you want to remove out of the container, and then drag in the new one</li>
-                        <li>Filter Pokemon by their types with the dropdown menu on the left.</li>
-                        <li>Or, if you know the name of the Pokemon you want begin typing it in the text bar on the right and it will appear.</li>
-                    </ul>
-                </b>
+                <b>Look through all original 151 Pokemon Cards. The cards show each Pokemons name, image and id number.</b>
+                <b>You can also filter Pokemon by:</b>
+                <ul>
+                    <li><b>Using the Drop Down Bar: </b>Filter Pokemon based on their types such as Fire, Water and many more</li>
+                    <li><b>Using the Text Search Box: </b>Filter Pokemon based on the names you know, such as Pikachu and Mew</li>
+                </ul>
             </div>
 
             <div class = "dropdown">
@@ -68,25 +62,6 @@
 
             <div id = "Pokemon-List"></div> <!--This is where all Pokemon Cards will go-->
         </div>
-
-        <!--These place the arrow buttons for my sidebar-->
-        <!-- <button class="side-panel-toggle" type="button">
-            <span class="material-icons sp-icon-open">keyboard_double_arrow_left</span>
-            <span class="material-icons sp-icon-close">keyboard_double_arrow_right</span>
-        </button> -->
-
-        <!-- <div class="side-panel">
-            Choose Your 3 Pokemon
-            <div class="select-team"></div>
-            <div class="select-team"></div>
-            <div class="select-team"></div>
-        </div> -->
     </div>
-
-    <!-- <script>
-        document.querySelector(".side-panel-toggle").addEventListener("click", () => {
-            document.querySelector(".wrapper").classList.toggle("side-panel-open")
-        })
-    </script> -->
 </body>
 </html>
