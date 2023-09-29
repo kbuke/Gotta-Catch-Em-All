@@ -93,7 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             //Filter using the search bar
             searchInput.addEventListener("input", (e) => {
-                //console.log(e.target.value)
                 let typeInput = e.target.value.toUpperCase()
                 if(card.id.includes(typeInput)){
                     card.style.display = "block"
