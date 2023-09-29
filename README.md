@@ -14,13 +14,26 @@ There are also two filter options that allow the user to see Pokemon based on ei
 ## Usage
 This app uses two fetch requests. The first is to obtain the Pokemons names
 ```javascript
- fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
+//pokemon parameter returns 151 seperate object which show each Pokemons name, and a key url which includes additional information 
+fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
     .then(resp => resp.json())
     .then(data => data.results.forEach(pokemon => createCard(pokemon)))
 ```
 To abstract additional information regarding each Pokemon, we need to send another fetch request to the url keys value found in each value of "pokemon"
 ```javascript
- fetch(`${pokemon.url}`)
+//url is that from the first fetch request. data parameter contains additional info, like image, name, id number and type
+fetch(`${pokemon.url}`)
     .then(resp => resp.json())
     .then(data => pokeStats(data))
+```
+The interactive elements of the application are done using two seperate "addEventListener":
+```javascript
+//replaces the back card with the front card
+backOfPokeCard.addEventListener("mouseover", () => {
+    pokeCardDiv.replaceChild(frontOfPokeCard, backOfPokeCard)
+})
+//replaces the front card with the back card 
+frontOfPokeCard.addEventListener("mouseout", () => {
+    pokeCardDiv.replaceChild(backOfPokeCard, frontOfPokeCard)
+})
 ```
