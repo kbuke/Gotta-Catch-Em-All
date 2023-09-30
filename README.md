@@ -51,3 +51,9 @@ frontOfPokeCard.addEventListener("mouseout", () => {
 ## Future Ideas
 For the future I would like to create a side bar with 3 boxes you can drag your three favourite Pokemon into. 
 I want it to also allow users to change their minds and switch their chosen three, returning their original choices to the deck of cards.
+
+## Contribution
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+
+Please make sure to update tests as appropriate.
