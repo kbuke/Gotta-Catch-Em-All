@@ -37,3 +37,7 @@ frontOfPokeCard.addEventListener("mouseout", () => {
     pokeCardDiv.replaceChild(backOfPokeCard, frontOfPokeCard)
 })
 ```
+
+## Future Ideas
+For the future I would like to create a side bar with 3 boxes you can drag your three favourite Pokemon into. 
+I want it to also allow users to change their minds and switch their chosen three, returning their original choices to the deck of cards.
