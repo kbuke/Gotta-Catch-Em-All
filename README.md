@@ -59,4 +59,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## Gif Work
-![Gif to show functionality]("C:\Users\kabuk\Downloads\video2428884690.gif")
+![video2428884690](https://github.com/kbuke/Gotta-Catch-Em-All/assets/125495101/89bf2e40-b690-495f-b294-a40f377fbaac)
