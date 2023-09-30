@@ -9,6 +9,16 @@ The web application is interactive, if a user hovers over a card the card face w
 There are also two filter options that allow the user to see Pokemon based on either their type, or their name. 
 
 ## Intsalation
+Please install the JSON server using:
+```javascript
+npm install -g json-server
+```
+Where the "g" flag stands for global, ensuring it is installed and accessible anywhere on your machine
+
+To make requests to the server please run:
+```javascript
+json-server --watch db.json
+```
 
 
 ## Usage
